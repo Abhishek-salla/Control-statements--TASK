@@ -1,0 +1,66 @@
+import random
+
+# 1. Voting Eligibility
+def check_voting_eligibility():
+    age = int(input("Enter your age: "))
+    if age >= 18:
+        print("You are eligible to vote.")
+    else:
+        print("You are not eligible to vote.")
+
+# 2. Grade Classification
+def grade_to_letter(percentage):
+    if percentage >= 90 and percentage <= 100:
+        return "A"
+    elif percentage >= 80:
+        return "B"
+    elif percentage >= 70:
+        return "C"
+    elif percentage >= 60:
+        return "D"
+    else:
+        return "F"
+
+# 3. Simple Calculator
+def calculator():
+    print("Choose operation: add, subtract, multiply, divide")
+    operation = input("Enter operation: ").lower()
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+
+    if operation == "add":
+        print("Result:", num1 + num2)
+    elif operation == "subtract":
+        print("Result:", num1 - num2)
+    elif operation == "multiply":
+        print("Result:", num1 * num2)
+    elif operation == "divide":
+        if num2 != 0:
+            print("Result:", num1 / num2)
+        else:
+            print("Error: Division by zero")
+    else:
+        print("Invalid operation")
+
+# 4. Odd/Even Guess
+def odd_even_guess():
+    number = random.randint(1, 100)
+    print(f"Generated number: {number}")
+    if number % 2 == 0:
+        print("The number is even.")
+    else:
+        print("The number is odd.")
+
+# --- Testing the functions ---
+print("=== Voting Eligibility ===")
+check_voting_eligibility()
+
+print("\n=== Grade Classification ===")
+grade = float(input("Enter your grade percentage: "))
+print("Letter Grade:", grade_to_letter(grade))
+
+print("\n=== Calculator ===")
+calculator()
+
+print("\n=== Odd/Even Guess ===")
+odd_even_guess()
